@@ -4,26 +4,34 @@
     ViewData["Title"] = "Contact Us";
 }
 
-
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+}
 <div class="text-center">
     <h1 class="display-4">Contact</h1>
     <form method="post">
         <label asp-for="Name">Your Name:</label>
         <br/>
         <input asp-for="Name" />
+        <span asp-validation-for="Name" class="text-danger"></span>
         <br/>
         <label asp-for="Email">Email:</label>
         <br/>
         <input asp-for="Email" type="email" />
+        <span asp-validation-for="Email" class="text-danger"></span>
         <br/>
         <label asp-for="Subject">Subject:</label>
         <br />
         <input asp-for="Subject" type="text" />
+        <span asp-validation-for="Subject" class="text-danger"></span>
         <br/>
         <label asp-for="Message">Message</label>
         <br/>
         <textarea asp-for="Message" rows="4" name="message"></textarea>
+        <span asp-validation-for="Message" class="text-danger"></span>
         <br/>
         <input type="submit" value="Send Message" />
+        <div class="text-success" role="alert">@ViewBag.UserMessage</div>
     </form>
 </div>
