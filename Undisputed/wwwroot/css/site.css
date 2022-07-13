@@ -56,6 +56,12 @@ body {
     justify-content: center;
 }
 
+.bg-white-opt {
+    background-color: var(--whiteOpt);
+    border-radius: 0.4rem;
+    border-color: var(--whiteOpt);
+}
+
 .bg-light-gray {
     background-color: var(--lightGray);
     border-radius: 0.4rem;

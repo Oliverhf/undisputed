@@ -39,6 +39,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Sindona/Documents/oliver-projects/Undisputed/Undisputed/Views/NeatTopic/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmVhdFRvcGljXERldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Sindona/Documents/oliver-projects/Undisputed/Undisputed/Views/NeatTopic/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmVhdFRvcGljXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -53,6 +57,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Sindona/Documents/oliver-projects/Undisputed/Undisputed/Views/Team/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sindona/Documents/oliver-projects/Undisputed/Undisputed/Views/Topic/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9waWNcRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Sindona/Documents/oliver-projects/Undisputed/Undisputed/Views/Topic/Index.cshtml]

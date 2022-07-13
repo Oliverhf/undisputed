@@ -1,12 +1,15 @@
 using Microsoft.EntityFrameworkCore;
 using Undisputed.Data;
 using Undisputed.Interfaces;
+using Undisputed.Repository;
 using Undisputed.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<ITopicRepository, TopicRepository>();
+builder.Services.AddScoped<INeatTopicRepository, NeatTopicRepository>();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
