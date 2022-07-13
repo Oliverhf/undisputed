@@ -1,5 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@200;300;400;500;600;700;800&display=swap');
+
+
+:root {
+    --fontFamily: 'Albert Sans', sans-serif;
+    --darkGray: #323232;
+    --lightGray: #4b4b4b;
+    --black: #000;
+    --blackOpt: #181818;
+    --white: #fffff;
+    --whiteOpt: #e6e6e6;
+    --gray: #656565;
+}
+
 html {
-  font-size: 14px;
+    font-family: var(--fontFamily);
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
@@ -14,5 +29,45 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    font-family: var(--fontFamily);
+    background: var(--whiteOpt);
+}
+
+.navbar {
+    padding: 0.2rem 0;
+}
+
+.navbar-light .navbar-nav .nav-link.text-dark-gray {
+    color: var(--darkGray);
+}
+
+.container-xsm {
+    width: 100%;
+    margin: 0 auto;
+    min-width: 240px;
+    max-width: 500px;
+}
+
+.container-custom1 {
+    width: 100%;
+    margin: 0 auto;
+    min-width: 1225px;
+    justify-content: center;
+}
+
+.bg-light-gray {
+    background-color: var(--lightGray);
+    border-radius: 0.4rem;
+    border-color: var(--lightGray);
+}
+
+.bg-gray {
+    background-color: var(--gray);
+    border-radius: 0.4rem;
+    border-color: var(--gray);
+}
+
+h2 {
+    font-size: 1.125rem;
 }

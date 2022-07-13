@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WAjweADavpVcsmntjkRXpFK+0+Zd3Q8L6X4BoACsB7I=",
+  "Hash": "4NpkA52nVX1SvoDzYvgFdqrea3iKI7A+tgM9YdubmNc=",
   "Source": "Undisputed",
   "BasePath": "_content/Undisputed",
   "Mode": "Default",
@@ -83,6 +83,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Sindona\\Documents\\oliver-projects\\Undisputed\\Undisputed\\wwwroot\\img\\undisputed-black.png",
+      "SourceId": "Undisputed",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Sindona\\Documents\\oliver-projects\\Undisputed\\Undisputed\\wwwroot\\",
+      "BasePath": "_content/Undisputed",
+      "RelativePath": "img/undisputed-black.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\undisputed-black.png"
+    },
+    {
+      "Identity": "C:\\Users\\Sindona\\Documents\\oliver-projects\\Undisputed\\Undisputed\\wwwroot\\img\\undisputed-white.png",
+      "SourceId": "Undisputed",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Sindona\\Documents\\oliver-projects\\Undisputed\\Undisputed\\wwwroot\\",
+      "BasePath": "_content/Undisputed",
+      "RelativePath": "img/undisputed-white.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\undisputed-white.png"
     },
     {
       "Identity": "C:\\Users\\Sindona\\Documents\\oliver-projects\\Undisputed\\Undisputed\\wwwroot\\js\\site.js",

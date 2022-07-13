@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using Undisputed.Data;
 using Undisputed.Interfaces;
 using Undisputed.Services;
 
@@ -5,9 +7,22 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+
 builder.Services.AddTransient<IMailService, NullMailService>();
 
 var app = builder.Build();
+
+//This is used to seed initial database
+if (args.Length == 1 && args[0].ToLower() == "seeddata")
+{
+    //await Seed.SeedUsersAndRolesAsync(app);
+    //Seed.SeedData(app);
+}
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
