@@ -56,6 +56,18 @@ body {
     justify-content: center;
 }
 
+.container-custom2 {
+    width: 95%;
+    margin: 0 auto;
+    min-width: 1225px;
+}
+
+.col-3 {
+    width: 20%;
+    flex: 0 0 auto;
+    max-width: 100%;
+}
+
 .bg-white-opt {
     background-color: var(--whiteOpt);
     border-radius: 0.4rem;

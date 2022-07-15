@@ -5,34 +5,38 @@
     ViewData["Title"] = "Topics";
 }
 
-<div class="container">
+<div class="container-custom2">
     <h1 class="text-dark-gray my-4">Topics</h1>
-    <div class="container p-0">
+    <div class="container-custom2">
         <div class="row bg-white-opt">
-            @foreach (var item in Model)
-            {
-                <div class="col">
-                    <div class="card mb-6 bg-white-opt box-shadow">
-                        <div class="card-body bg-light-gray p-0">
-                            <img class="card-img-top" src="@item.Image" width="100%" object-fit= "cover" height="180" />
-                            <div class="p-4">
-                                <h3 class="text-white">@item.Title</h3>
-                                <p class="card-text text-white">
-                                    @item.Description
-                                </p>
-                                <div class="d-flex justify-content-between align-items-center pb-4">
-                                    <div class="btn-group">
-                                        <a asp-controller="Topic" asp-action="Detail" asp-route-id="@item.Id" type="button" class="btn btn-md btn-outline-secondary">
-                                            @item.TopicCategory
-                                        </a>
+          
+                <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-3">
+                        <div class="card mb-6 bg-white-opt box-shadow">
+                            <div class="card-body bg-light-gray p-0">
+                                <img class="card-img-top" src="@item.Image" width="100%" object-fit="cover" height="180" />
+                                <div class="p-4">
+                                    <h3 class="text-white">@item.Title</h3>
+                                    <p class="card-text text-white">
+                                        @item.Description
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center pb-4">
+                                        <div class="btn-group">
+                                            <a asp-controller="Topic" asp-action="Detail" asp-route-id="@item.Id" type="button" class="btn btn-md btn-outline-secondary">
+                                                @item.TopicCategory
+                                            </a>
+                                        </div>
                                     </div>
+                                    <small class="text-white">@item.DateStarted</small>
                                 </div>
-                                <small class="text-white">@item.DateStarted</small>
                             </div>
                         </div>
                     </div>
+                }
                 </div>
-            }
+         
         </div>
     </div>
 </div>
