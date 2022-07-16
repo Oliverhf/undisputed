@@ -66,6 +66,92 @@ namespace Undisputed.Controllers
         }
 
 
+        public async Task<IActionResult> Edit(int id)
+        {
+            var neatTopic = await _neatTopicRepository.GetByIdAsync(id);
+            if (neatTopic == null) return View("Error");
+            var neatTopicVM = new EditNeatTopicViewModel
+            {
+                Title = neatTopic.Title,
+                Description = neatTopic.Description,
+                AddressId = neatTopic.AddressId,
+                Address = neatTopic.Address,
+                URL = neatTopic.Image,
+                NeatTopicCategory = neatTopic.NeatTopicCategory
+            };
+            return View(neatTopicVM);
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, EditNeatTopicViewModel neatTopicVM)
+        {
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError("", "Failed to edit Neat Topic");
+                return View("Edit", neatTopicVM);
+            }
+
+            var userNeatTopic = await _neatTopicRepository.GetByIdAsyncNoTracking(id);
+
+            if (userNeatTopic != null)
+            {
+                try
+                {
+                    var fi = new FileInfo(userNeatTopic.Image);
+                    var publicId = Path.GetFileNameWithoutExtension(fi.Name);
+                    await _photoService.DeletePhotoAsync(publicId);
+                }
+                catch
+                {
+                    ModelState.AddModelError("", "Could not delete photo");
+                    return View(neatTopicVM);
+                }
+
+                var photoResult = await _photoService.AddPhotoAsync(neatTopicVM.Image);
+
+                var neatTopic = new NeatTopic
+                {
+                    Id = id,
+                    Title = neatTopicVM.Title,
+                    Description = neatTopicVM.Description,
+                    Image = photoResult.Url.ToString(),
+                    AddressId = neatTopicVM.AddressId,
+                    Address = neatTopicVM.Address,
+                };
+
+                _neatTopicRepository.Update(neatTopic);
+
+
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View(neatTopicVM);
+            }
+
+
+        }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            var neatTopicDetails = await _neatTopicRepository.GetByIdAsync(id);
+            if (neatTopicDetails == null) return View("Error");
+            return View(neatTopicDetails);
+        }
+
+
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> DeleteNeat(int id)
+        {
+            var neatDetails = await _neatTopicRepository.GetByIdAsync(id);
+            if (neatDetails == null) return View("Error");
+
+            _neatTopicRepository.Delete(neatDetails);
+            return RedirectToAction("Index");
+        }
+
+
         [Route("api/[Controller]")]
         //[ApiController]
         [Produces("application/json")]

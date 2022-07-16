@@ -1,11 +1,12 @@
 ﻿@using Undisputed.Data.Enum
-@using Undisputed.ViewModels
-@model Team
+@model Topic
 @{
 }
 
 
-<form method="post" asp-action="Create">
+<h1>Are you sure you want to delete this Topic?</h1>
+
+<form method="post" asp-action="Delete" enctype="multipart/form-data">
     <div class="form-group">
         <label asp-for="Title">Title</label>
         <input asp-for="Title" class="form-control" placeholder="Title" />
@@ -17,11 +18,11 @@
         <span asp-validation-for="Description" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="TeamCategory">Category</label>
-        <select asp-for="TeamCategory" class="form-control" asp-items="@Html.GetEnumSelectList<TeamCategory>()">
+        <label asp-for="TopicCategory">Category</label>
+        <select asp-for="TopicCategory" class="form-control" asp-items="@Html.GetEnumSelectList<TopicCategory>()">
             <option>--Select--</option>
         </select>
-        <span asp-validation-for="TeamCategory" class="text-danger"></span>
+        <span asp-validation-for="TopicCategory" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="Address.Street">Street</label>
@@ -43,6 +44,10 @@
         <input asp-for="Image" type="file" class="form-control" placeholder="Image" />
         <span asp-validation-for="Image" class="text-danger"></span>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
+<div class="form-group">
+    <form action="Delete" method="post">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Submit" class="btn btn-danger float-right mt-3" />
+    </form>
+</div>

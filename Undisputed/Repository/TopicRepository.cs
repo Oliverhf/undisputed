@@ -38,6 +38,13 @@ namespace Undisputed.Repository
           
         }
 
+        public async Task<Topic> GetByIdAsyncNoTracking(int id)
+        {
+
+            return await _context.Topics.Include(i => i.Address).AsNoTracking().FirstOrDefaultAsync(t => t.Id == id);
+
+        }
+
         public async Task<IEnumerable<Topic>> GetTopicByCity(string city)
         {
             return await _context.Topics.Where(t => t.Address.City.Contains(city)).ToListAsync();

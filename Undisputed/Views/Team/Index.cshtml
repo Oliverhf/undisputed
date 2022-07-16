@@ -13,7 +13,7 @@
                 <div class="col">
                     <div class="card mb-6 bg-white-opt box-shadow">
                         <div class="card-body bg-light-gray p-0">
-                            <img class="card-img-top" src="@item.Image" width="100%" object-fit: "cover" height="180" />
+                            <img class="card-img-top" src="@item.Image" width="100%" object-fit= "cover" height="180" />
                             <div class="p-4">
                                 <h3 class="text-white">@item.Title</h3>
                                 <p class="card-text text-white">
@@ -23,6 +23,12 @@
                                     <div class="btn-group">
                                         <a asp-controller="Team" asp-action="Detail" asp-route-id="@item.Id" type="button" class="btn btn-md btn-outline-secondary">
                                             @item.TeamCategory
+                                        </a>
+                                        <a asp-controller="Team" asp-action="Edit" asp-route-id="@item.Id" type="button" class="btn btn-md btn-outline-secondary">
+                                            Edit
+                                        </a>
+                                        <a asp-controller="Team" asp-action="Delete" asp-route-id="@item.Id" type="button" class="btn btn-md btn-outline-secondary">
+                                            Delete
                                         </a>
                                     </div>
                                 </div>

@@ -61,6 +61,25 @@ namespace Undisputed.Controllers
             return View(teamVM);
         }
 
+        public async Task<IActionResult> Delete(int id)
+        {
+            var teamDetails = await _teamRepository.GetByIdAsync(id);
+            if (teamDetails == null) return View("Error");
+            return View(teamDetails);
+        }
+
+
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> DeleteTeam(int id)
+        {
+            var teamDetails = await _teamRepository.GetByIdAsync(id);
+            if (teamDetails == null) return View("Error");
+
+            _teamRepository.Delete(teamDetails);
+            return RedirectToAction("Index");
+        }
+
+
 
         [Route("api/[Controller]")]
         //[ApiController]
@@ -75,7 +94,7 @@ namespace Undisputed.Controllers
             }
             catch (Exception ex)
             {
-                return (IEnumerable<Team>)BadRequest("Failed to get topics");
+                return (IEnumerable<Team>)BadRequest("Failed to get teams");
             }
 
         }

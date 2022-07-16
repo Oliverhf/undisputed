@@ -43,8 +43,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmVhdFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Sindona/Documents/oliver-projects/Undisputed/Undisputed/Views/Neat/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmVhdFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Sindona/Documents/oliver-projects/Undisputed/Undisputed/Views/Neat/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmVhdFxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sindona/Documents/oliver-projects/Undisputed/Undisputed/Views/Neat/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmVhdFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Sindona/Documents/oliver-projects/Undisputed/Undisputed/Views/Neat/Index.cshtml]
@@ -63,6 +71,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Sindona/Documents/oliver-projects/Undisputed/Undisputed/Views/Team/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Sindona/Documents/oliver-projects/Undisputed/Undisputed/Views/Team/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbVxEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -75,8 +87,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9waWNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Sindona/Documents/oliver-projects/Undisputed/Undisputed/Views/Topic/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9waWNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Sindona/Documents/oliver-projects/Undisputed/Undisputed/Views/Topic/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9waWNcRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sindona/Documents/oliver-projects/Undisputed/Undisputed/Views/Topic/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9waWNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Sindona/Documents/oliver-projects/Undisputed/Undisputed/Views/Topic/Index.cshtml]

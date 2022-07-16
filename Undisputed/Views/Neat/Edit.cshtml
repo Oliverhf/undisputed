@@ -1,11 +1,11 @@
-﻿@using Undisputed.Data.Enum
+﻿
+@using Undisputed.Data.Enum
 @using Undisputed.ViewModels
-@model Team
+@model EditNeatTopicViewModel
 @{
 }
 
-
-<form method="post" asp-action="Create">
+<form method="post" asp-action="Edit" enctype="multipart/form-data">
     <div class="form-group">
         <label asp-for="Title">Title</label>
         <input asp-for="Title" class="form-control" placeholder="Title" />
@@ -17,11 +17,11 @@
         <span asp-validation-for="Description" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="TeamCategory">Category</label>
-        <select asp-for="TeamCategory" class="form-control" asp-items="@Html.GetEnumSelectList<TeamCategory>()">
+        <label asp-for="NeatTopicCategory">Category</label>
+        <select asp-for="NeatTopicCategory" class="form-control" asp-items="@Html.GetEnumSelectList<NeatTopicCategory>()">
             <option>--Select--</option>
         </select>
-        <span asp-validation-for="TeamCategory" class="text-danger"></span>
+        <span asp-validation-for="NeatTopicCategory" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="Address.Street">Street</label>
@@ -45,4 +45,3 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-

@@ -36,6 +36,12 @@ namespace Undisputed.Repository
             return await _context.NeatTopics.Include(i => i.Address).FirstOrDefaultAsync(t => t.Id == id);
         }
 
+        public async Task<NeatTopic> GetByIdAsyncNoTracking(int id)
+        {
+            return await _context.NeatTopics.Include(i => i.Address).AsNoTracking().FirstOrDefaultAsync(t => t.Id == id);
+        }
+
+
         public async Task<IEnumerable<NeatTopic>> GetNeatTopicByCity(string city)
         {
             return await _context.NeatTopics.Where(t => t.Address.City.Contains(city)).ToListAsync();

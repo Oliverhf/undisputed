@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Undisputed.Data;
 using Undisputed.Interfaces;
 using Undisputed.Models;
+using Undisputed.Repository;
 using Undisputed.ViewModels;
 
 namespace Undisputed.Controllers
@@ -72,6 +73,89 @@ namespace Undisputed.Controllers
             
             return View(topicVM);
             
+        }
+
+        public async Task<IActionResult> Edit(int id)
+        {
+            var topic = await _topicRepository.GetByIdAsync(id);
+            if(topic == null) return View("Error");
+            var topicVM = new EditTopicViewModel
+            {
+                Title = topic.Title,
+                Description = topic.Description,
+                AddressId = topic.AddressId,
+                Address = topic.Address,
+                URL = topic.Image,
+                TopicCategory = topic.TopicCategory
+            };
+            return View(topicVM);
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, EditTopicViewModel topicVM)
+        {
+            if(!ModelState.IsValid)
+            {
+                ModelState.AddModelError("", "Failed to edit Topic");
+                return View("Edit", topicVM);
+            }
+
+            var userTopic = await _topicRepository.GetByIdAsyncNoTracking(id);
+
+            if(userTopic != null)
+            {
+                try
+                {
+                    await _photoService.DeletePhotoAsync(userTopic.Image);
+                }
+                catch
+                {
+                    ModelState.AddModelError("", "Could not delete photo");
+                    return View(topicVM);
+                }
+
+                var photoResult = await _photoService.AddPhotoAsync(topicVM.Image);
+
+                var topic = new Topic
+                {
+                    Id = id,
+                    Title = topicVM.Title,
+                    Description = topicVM.Description,
+                    Image = photoResult.Url.ToString(),
+                    AddressId = topicVM.AddressId,
+                    Address = topicVM.Address,
+                };
+
+                _topicRepository.Update(topic);
+
+
+                return RedirectToAction("Index");
+            } else
+            {
+                return View(topicVM);
+            }
+
+
+        }
+
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            var topicDetails = await _topicRepository.GetByIdAsync(id);
+            if (topicDetails == null) return View("Error");
+            return View(topicDetails);
+        }
+
+
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> DeleteTopic(int id)
+        {
+            var topicDetails = await _topicRepository.GetByIdAsync(id);
+            if (topicDetails == null) return View("Error");
+
+            _topicRepository.Delete(topicDetails);
+            return RedirectToAction("Index");
         }
 
 

@@ -6,6 +6,7 @@ namespace Undisputed.Interfaces
     {
         Task<IEnumerable<Topic>> GetAll();
         Task<Topic> GetByIdAsync(int id);
+        Task<Topic> GetByIdAsyncNoTracking(int id);
         Task<IEnumerable<Topic>> GetTopicByCity(string city);
 
         bool Add(Topic topic);

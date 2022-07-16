@@ -27,6 +27,12 @@
                                             <a asp-controller="Neat" asp-action="Detail" asp-route-id="@item.Id" type="button" class="btn btn-md btn-outline-secondary">
                                                 @item.NeatTopicCategory
                                             </a>
+                                            <a asp-controller="Neat" asp-action="Edit" asp-route-id="@item.Id" type="button" class="btn btn-md btn-outline-secondary">
+                                                Edit
+                                            </a>
+                                            <a asp-controller="Neat" asp-action="Delete" asp-route-id="@item.Id" type="button" class="btn btn-md btn-outline-secondary">
+                                                Delete
+                                            </a>
                                         </div>
                                     </div>
                                     <small class="text-white">@item.DateStarted</small>
