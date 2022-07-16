@@ -11,11 +11,12 @@ namespace Undisputed.Controllers
     public class TopicController : Controller
     {
         private readonly ITopicRepository _topicRepository;
+        private readonly IPhotoService _photoService;
 
-
-        public TopicController(ITopicRepository topicRepository)
+        public TopicController(ITopicRepository topicRepository, IPhotoService photoService)
         {
             _topicRepository = topicRepository;
+            _photoService = photoService;
         }
 
   
@@ -43,11 +44,14 @@ namespace Undisputed.Controllers
         {
             if(ModelState.IsValid)
             {
+
+                var result = await _photoService.AddPhotoAsync(topicVM.Image);
+
                 var topic = new Topic
                 {
                     Title = topicVM.Title,
                     Description = topicVM.Description,
-                    Image = topicVM.Image.ToString(),
+                    Image = result.Url.ToString(),
                     TopicCategory = topicVM.TopicCategory,
                     AppUserId = topicVM.AppUserId,
                     Address = new Address
@@ -57,6 +61,7 @@ namespace Undisputed.Controllers
                         State = topicVM.Address.State,
                     }
                 };
+
                 _topicRepository.Add(topic);
                 return RedirectToAction("Index");
             }

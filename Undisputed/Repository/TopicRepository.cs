@@ -33,7 +33,9 @@ namespace Undisputed.Repository
 
         public async Task<Topic> GetByIdAsync(int id)
         {
+
             return await _context.Topics.Include(i => i.Address).FirstOrDefaultAsync(t => t.Id == id);
+          
         }
 
         public async Task<IEnumerable<Topic>> GetTopicByCity(string city)

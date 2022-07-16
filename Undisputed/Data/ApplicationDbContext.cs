@@ -48,12 +48,6 @@ namespace Undisputed.Data
                 x => x.HasOne(x => x.Team).WithMany().HasForeignKey(x => x.TeamId),
                 x => x.HasOne(x => x.User).WithMany().HasForeignKey(x => x.UserId));
 
-          
-
-
-
-
-
         }
         public DbSet<Topic> Topics { get; set; }
         public DbSet<NeatTopic> NeatTopics { get; set; }

@@ -3,16 +3,16 @@ using Undisputed.Models;
 
 namespace Undisputed.ViewModels
 {
-    public class CreateTopicViewModel
+    public class CreateTeamViewModel
     {
         public int Id { get; set; }
         public string? Title { get; set; }
         public string? Description { get; set; }
-        public IFormFile? Image { get; set; }
+        public string? Image { get; set; }
         public Address? Address { get; set; }
-        public TopicCategory TopicCategory { get; set; }
+        public TeamCategory TeamCategory { get; set; }
         public string? AppUserId { get; set; }
-        public AppUser? AppUser { get; set; }
         public DateTime? DateStarted { get; set; }
+
     }
 }

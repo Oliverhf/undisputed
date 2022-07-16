@@ -21,9 +21,9 @@
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center pb-4">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-md btn-outline-secondary">
+                                        <a asp-controller="Team" asp-action="Detail" asp-route-id="@item.Id" type="button" class="btn btn-md btn-outline-secondary">
                                             @item.TeamCategory
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                                 <small class="text-white">@item.DateStarted</small>

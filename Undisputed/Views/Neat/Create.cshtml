@@ -1,6 +1,6 @@
 ﻿@using Undisputed.Data.Enum
 @using Undisputed.ViewModels
-@model Topic
+@model NeatTopic
 @{
 }
 
@@ -12,16 +12,16 @@
         <span asp-validation-for="Title" class="text-danger"></span>
     </div>
     <div class="form-group">
-          <label asp-for="Description">Description</label>
-          <input asp-for="Description" class="form-control" placeholder="Description" />
-          <span asp-validation-for="Description" class="text-danger"></span>
+        <label asp-for="Description">Description</label>
+        <input asp-for="Description" class="form-control" placeholder="Description" />
+        <span asp-validation-for="Description" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="TopicCategory">Category</label>
-        <select asp-for="TopicCategory" class="form-control" asp-items="@Html.GetEnumSelectList<TopicCategory>()">
+        <label asp-for="NeatTopicCategory">Category</label>
+        <select asp-for="NeatTopicCategory" class="form-control" asp-items="@Html.GetEnumSelectList<NeatTopicCategory>()">
             <option>--Select--</option>
         </select>
-        <span asp-validation-for="TopicCategory" class="text-danger"></span>
+        <span asp-validation-for="NeatTopicCategory" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="Address.Street">Street</label>

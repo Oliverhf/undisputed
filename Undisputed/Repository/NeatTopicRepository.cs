@@ -14,15 +14,15 @@ namespace Undisputed.Repository
             _context = context;
         }
 
-        public bool Add(NeatTopic neatTopic)
+        public bool Add(NeatTopic neattopic)
         {
-            _context.Add(neatTopic);
+            _context.Add(neattopic);
             return Save();
         }
 
         public bool Delete(NeatTopic neattopic)
         {
-           _context.Remove(neattopic);
+            _context.Remove(neattopic);
             return Save();
         }
 
@@ -31,14 +31,14 @@ namespace Undisputed.Repository
             return await _context.NeatTopics.ToListAsync();
         }
 
-        public async Task<IEnumerable<NeatTopic>> GetAllNeatTopicsByCity(string city)
-        {
-            return await _context.NeatTopics.Where(t => t.Address.City.Contains(city)).ToListAsync();
-        }
-
         public async Task<NeatTopic> GetByIdAsync(int id)
         {
-            return await _context.NeatTopics.Include(i => i.Address).FirstOrDefaultAsync();
+            return await _context.NeatTopics.Include(i => i.Address).FirstOrDefaultAsync(t => t.Id == id);
+        }
+
+        public async Task<IEnumerable<NeatTopic>> GetNeatTopicByCity(string city)
+        {
+            return await _context.NeatTopics.Where(t => t.Address.City.Contains(city)).ToListAsync();
         }
 
         public bool Save()
@@ -47,9 +47,9 @@ namespace Undisputed.Repository
             return saved > 0 ? true : false;
         }
 
-        public bool Update(NeatTopic neatTopic)
+        public bool Update(NeatTopic neattopic)
         {
-            _context.Update(neatTopic);
+            _context.Update(neattopic);
             return Save();
         }
     }

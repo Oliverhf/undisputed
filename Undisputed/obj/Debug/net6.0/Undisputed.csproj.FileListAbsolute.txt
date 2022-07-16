@@ -59,3 +59,7 @@ C:\Users\Sindona\Documents\oliver-projects\Undisputed\Undisputed\bin\Debug\net6.
 C:\Users\Sindona\Documents\oliver-projects\Undisputed\Undisputed\obj\Debug\net6.0\Undisputed.csproj.CopyComplete
 C:\Users\Sindona\Documents\oliver-projects\Undisputed\Undisputed\bin\Debug\net6.0\Humanizer.dll
 C:\Users\Sindona\Documents\oliver-projects\Undisputed\Undisputed\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Sindona\Documents\oliver-projects\Undisputed\Undisputed\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\Sindona\Documents\oliver-projects\Undisputed\Undisputed\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Sindona\Documents\oliver-projects\Undisputed\Undisputed\bin\Debug\net6.0\CloudinaryDotNet.dll
+C:\Users\Sindona\Documents\oliver-projects\Undisputed\Undisputed\bin\Debug\net6.0\Newtonsoft.Json.dll

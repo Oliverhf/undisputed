@@ -1,27 +1,32 @@
 ﻿@using Undisputed.Data.Enum
 @using Undisputed.ViewModels
-@model Topic
+@model Team
 @{
 }
 
 
-<form method="post" asp-action="Create" enctype="multipart/form-data">
+<form method="post" asp-action="Create">
     <div class="form-group">
         <label asp-for="Title">Title</label>
         <input asp-for="Title" class="form-control" placeholder="Title" />
         <span asp-validation-for="Title" class="text-danger"></span>
     </div>
     <div class="form-group">
-          <label asp-for="Description">Description</label>
-          <input asp-for="Description" class="form-control" placeholder="Description" />
-          <span asp-validation-for="Description" class="text-danger"></span>
+        <label asp-for="Description">Description</label>
+        <input asp-for="Description" class="form-control" placeholder="Description" />
+        <span asp-validation-for="Description" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="TopicCategory">Category</label>
-        <select asp-for="TopicCategory" class="form-control" asp-items="@Html.GetEnumSelectList<TopicCategory>()">
+        <label asp-for="Image">Image</label>
+        <input asp-for="Image" class="form-control" placeholder="Image" />
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TeamCategory">Category</label>
+        <select asp-for="TeamCategory" class="form-control" asp-items="@Html.GetEnumSelectList<TeamCategory>()">
             <option>--Select--</option>
         </select>
-        <span asp-validation-for="TopicCategory" class="text-danger"></span>
+        <span asp-validation-for="TeamCategory" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="Address.Street">Street</label>
@@ -38,10 +43,7 @@
         <input asp-for="Address.State" class="form-control" placeholder="State" />
         <span asp-validation-for="Address.State" class="text-danger"></span>
     </div>
-    <div class="form-group">
-        <label asp-for="Image">Image</label>
-        <input asp-for="Image" type="file" class="form-control" placeholder="Image" />
-        <span asp-validation-for="Image" class="text-danger"></span>
-    </div>
+
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+

@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 using Undisputed.Data;
+using Undisputed.Helpers;
 using Undisputed.Interfaces;
 using Undisputed.Repository;
 using Undisputed.Services;
@@ -7,15 +9,20 @@ using Undisputed.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+//builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<ITopicRepository, TopicRepository>();
 builder.Services.AddScoped<INeatTopicRepository, NeatTopicRepository>();
+builder.Services.AddScoped<ITeamRepository, TeamRepository>();
+builder.Services.AddScoped<IPhotoService, PhotoService>();
+builder.Services.Configure<CloudinarySettings>(builder.Configuration.GetSection("CloudinarySettings"));
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
 builder.Services.AddTransient<IMailService, NullMailService>();
+
 
 var app = builder.Build();
 
