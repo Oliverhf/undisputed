@@ -5,7 +5,12 @@
     ViewData["Title"] = "Login";
 }
 
-<h1>Login</h1>
+
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+}
+
 
 <div class="row">
     <div class="col-md-6 offset-3">
@@ -19,7 +24,7 @@
             </div>
         }
         <div class="row">
-            <div class="col-md-8 offset-2">
+            <div class="col-md-4 col-md-offset-4">
                 <form asp-action="Login">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group">
@@ -33,8 +38,14 @@
                         <span asp-validation-for="Password" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <input class="btn btn-outline-success float-end right" type="submit" value="Log in" />
-                        <a class="btn btn-outline-secondary" asp-controller="Club" asp-action="Index">Cancel</a>
+                        <div>
+                            <input asp-for="RememberMe" type="checkbox" />
+                            <label asp-for="RememberMe" class="form-check-label">Remember Me?</label>
+                        </div>
+                        <span asp-validation-for="RememberMe" class="text-warning"></span>
+                    </div>
+                    <div class="form-group">
+                        <input class="btn btn-outline-success float left" type="submit" value="Log in" />
                     </div>
                 </form>
             </div>

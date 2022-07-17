@@ -31,11 +31,25 @@
                             <a class="nav-link text-dark-gray" asp-area="" asp-controller="neat" asp-action="Index">Neat's</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark-gray" asp-area="" asp-controller="contact" asp-action="Index">Contact</a>
+                            <a class="nav-link text-dark-gray" asp-area="" asp-controller="shop" asp-action="Index">Shop</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark-gray" asp-area="" asp-controller="account" asp-action="login">Login</a>
+                            <a class="nav-link text-dark-gray" asp-area="" asp-controller="contact" asp-action="Index">Contact</a>
                         </li>
+                        @if(User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark-gray" asp-controller="Account" asp-action="Logout">Logout</a>
+                            </li>
+                        } else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark-gray" asp-controller="Account" asp-action="Login">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark-gray" asp-controller="Account" asp-action="Register">Register</a>
+                            </li>
+                        }
 
                     </ul>
                 </div>

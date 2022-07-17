@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using System.Reflection;
+using System.Text;
 using Undisputed.Data;
 using Undisputed.Helpers;
 using Undisputed.Interfaces;
@@ -30,7 +32,17 @@ builder.Services.AddIdentity<AppUser, IdentityRole>()
 builder.Services.AddMemoryCache();
 builder.Services.AddSession();
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie();
+    .AddCookie()
+    .AddJwtBearer(cfg =>
+    {
+        cfg.TokenValidationParameters = new TokenValidationParameters()
+        {
+            ValidIssuer = builder.Configuration["Tokens:Issuer"],
+            ValidAudience = builder.Configuration["Tokens:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Tokens:Key"]))
+        };
+    });
+
 
 
 var app = builder.Build();

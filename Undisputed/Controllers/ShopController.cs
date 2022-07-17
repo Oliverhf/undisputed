@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Undisputed.Controllers
@@ -10,5 +11,7 @@ namespace Undisputed.Controllers
         {
             return View();
         }
+
+
     }
 }

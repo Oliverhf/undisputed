@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Undisputed.Data;
 using Undisputed.Interfaces;
@@ -157,10 +159,10 @@ namespace Undisputed.Controllers
             _topicRepository.Delete(topicDetails);
             return RedirectToAction("Index");
         }
-
-
+      
 
         [Route("api/[Controller]")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         //[ApiController]
         [Produces("application/json")]
         [HttpGet]
