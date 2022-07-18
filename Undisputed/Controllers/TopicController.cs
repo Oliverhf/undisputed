@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Undisputed.Data;
+using Undisputed.Extensions;
 using Undisputed.Interfaces;
 using Undisputed.Models;
 using Undisputed.Repository;
@@ -15,14 +16,16 @@ namespace Undisputed.Controllers
     {
         private readonly ITopicRepository _topicRepository;
         private readonly IPhotoService _photoService;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public TopicController(ITopicRepository topicRepository, IPhotoService photoService)
+        public TopicController(ITopicRepository topicRepository, IPhotoService photoService, IHttpContextAccessor httpContextAccessor)
         {
             _topicRepository = topicRepository;
             _photoService = photoService;
+            _httpContextAccessor = httpContextAccessor;
         }
 
-  
+
         public async Task<IActionResult> Index()
         {
             IEnumerable<Topic> topics = await _topicRepository.GetAll();
@@ -38,7 +41,9 @@ namespace Undisputed.Controllers
   
         public IActionResult Create()
         {
-            return View();
+            var curUserId = _httpContextAccessor.HttpContext.User.GetUserId();
+            var createTopicViewModel = new CreateTopicViewModel { AppUserId = curUserId };
+            return View(createTopicViewModel);
         }
 
 

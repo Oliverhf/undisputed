@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Undisputed.Extensions;
 using Undisputed.Interfaces;
 using Undisputed.Models;
 using Undisputed.Repository;
@@ -9,10 +10,12 @@ namespace Undisputed.Controllers
     public class TeamController : Controller
     {
         private readonly ITeamRepository _teamRepository;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public TeamController(ITeamRepository teamRepository)
+        public TeamController(ITeamRepository teamRepository, IHttpContextAccessor httpContextAccessor)
         {
             _teamRepository = teamRepository;
+            _httpContextAccessor = httpContextAccessor;
         }
         public async Task<IActionResult> Index()
         {
@@ -28,7 +31,9 @@ namespace Undisputed.Controllers
 
         public IActionResult Create()
         {
-            return View();
+            var curUserId = _httpContextAccessor.HttpContext?.User.GetUserId();
+            var createTeamViewModel = new CreateTeamViewModel {  AppUserId = curUserId };
+            return View(createTeamViewModel);
         }
 
         [HttpPost]

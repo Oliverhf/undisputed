@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Undisputed.Extensions;
 using Undisputed.Interfaces;
 using Undisputed.Models;
 using Undisputed.Repository;
@@ -11,11 +12,13 @@ namespace Undisputed.Controllers
     {
         private readonly INeatTopicRepository _neatTopicRepository;
         private readonly IPhotoService _photoService;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public NeatController(INeatTopicRepository neatTopicRepository, IPhotoService photoService)
+        public NeatController(INeatTopicRepository neatTopicRepository, IPhotoService photoService, IHttpContextAccessor httpContextAccessor)
         {
             _neatTopicRepository = neatTopicRepository;
             _photoService = photoService;
+            _httpContextAccessor = httpContextAccessor;
         }
         public async Task<IActionResult> Index()
         {
@@ -30,7 +33,9 @@ namespace Undisputed.Controllers
 
         public IActionResult Create()
         {
-            return View();
+            var curUserId = _httpContextAccessor.HttpContext?.User.GetUserId();
+            var createNeatTopicViewModel = new CreateNeatTopicViewModel { AppUserId = curUserId };
+            return View(createNeatTopicViewModel);
         }
 
         [HttpPost]
