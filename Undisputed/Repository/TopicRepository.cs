@@ -30,6 +30,11 @@ namespace Undisputed.Repository
         {
             return await _context.Topics.ToListAsync();
         }
+        public async Task<IEnumerable<Topic>> GetAllByUser(string username)
+        {
+            return await _context.Topics.Where(t => t.AppUser.UserName == username).ToListAsync();
+        }
+
 
         public async Task<Topic> GetByIdAsync(int id)
         {

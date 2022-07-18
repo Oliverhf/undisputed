@@ -176,7 +176,8 @@ namespace Undisputed.Controllers
 
             try
             {
-                return await _topicRepository.GetAll();
+                var username = User.Identity.Name;
+                return await _topicRepository.GetAllByUser(username);
 
             }
             catch (Exception ex)

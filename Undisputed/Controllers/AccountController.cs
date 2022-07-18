@@ -139,15 +139,18 @@ namespace Undisputed.Controllers
                             _config["Token:Issuer"],
                             _config["Token:Audience"],
                             claims,
-                            signingCredentials: creds,
-                            expires: DateTime.UtcNow.AddMinutes(20)
+                            expires: DateTime.UtcNow.AddMinutes(30),
+                            signingCredentials: creds
+
                          );
 
-                        return Created("", new
+                        var results = new
                         {
-                            token = new JwtSecurityTokenHandler().WriteToken(token), 
+                            token = new JwtSecurityTokenHandler().WriteToken(token),
                             expiration = token.ValidTo
-                        });
+                        };
+
+                        return Created("", results);
 
                     }
                 }
