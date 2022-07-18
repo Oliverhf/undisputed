@@ -65,3 +65,4 @@ C:\Users\Sindona\Documents\oliver-projects\Undisputed\Undisputed\bin\Debug\net6.
 C:\Users\Sindona\Documents\oliver-projects\Undisputed\Undisputed\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\Sindona\Documents\oliver-projects\Undisputed\Undisputed\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\Sindona\Documents\oliver-projects\Undisputed\Undisputed\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Sindona\Documents\oliver-projects\Undisputed\Undisputed\bin\Debug\net6.0\tsconfig.json
