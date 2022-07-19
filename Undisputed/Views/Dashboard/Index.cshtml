@@ -6,10 +6,11 @@
 
 <h1>User Dashboard</h1>
 <div class="album py-5 bg-light">
+    <a type="btn btn-success" asp-controller="Dashboard" asp-action="EditUserProfile"
+       class="btn btn-sm btn-outline-secondary">Edit User Profile</a>
     <div class="container">
         <h2 class="display-4 fw-normal">Your Topics</h2>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
             @foreach (var item in Model.Topics)
             {
                 <div class="col-md-4">
@@ -22,6 +23,7 @@
                                 <div class="btn-group">
                                     <a type="btn btn-success" asp-controller="Topic" asp-action="Detail" asp-route-id="@item.Id"
                                    class="btn btn-sm btn-outline-secondary">View</a>
+
                                
                                     @if (User.Identity.IsAuthenticated)
                                     {

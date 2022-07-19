@@ -1,0 +1,46 @@
+﻿@using Undisputed.ViewModels
+@model EditUserDashboardViewModel
+@{
+    ViewData["Title"] = "Edit User Dashboard Profile";
+}
+
+<form method="post" asp-action="EditUserProfile" enctype="multipart/form-data">
+    <input type="hidden" id="Id" name="Id" value="@Model.Id" />
+    <div class="form-group">
+        <label asp-for="UserName">UserName</label>
+        <input asp-for="UserName" class="form-control" placeholder="UserName">
+        <span asp-validation-for="UserName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="AboutMe">AboutMe</label>
+        <input asp-for="AboutMe" class="form-control" placeholder="AboutMe">
+        <span asp-validation-for="AboutMe" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Score">Score</label>
+        <input asp-for="Score" class="form-control" placeholder="Score">
+        <span asp-validation-for="Score" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Rate">Rate</label>
+        <input asp-for="Rate" class="form-control" placeholder="Rate">
+        <span asp-validation-for="Rate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="City">City</label>
+        <input asp-for="City" class="form-control" placeholder="City">
+        <span asp-validation-for="City" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="State">State</label>
+        <input asp-for="State" class="form-control" placeholder="State">
+        <span asp-validation-for="State" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Image">Profile Image</label>
+        <input asp-for="Image" type="file" class="form-control" placeholder="Image">
+        <span asp-validation-for="Image" class="text-danger"></span>
+
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
