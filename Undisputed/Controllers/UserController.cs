@@ -42,6 +42,7 @@ namespace Undisputed.Controllers
             {
                 Id = user.Id,
                 UserName = user.UserName,
+                AboutMe = user.AboutMe,
                 Score = user.Score,
                 Rate = user.Rate,
                 ProfileImageUrl = user.ProfileImageUrl.ToString(),
