@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "x0kPHbMGKZKZIT/mNUhC8VSCgDDC2SGjBdu4F5nLueTLN4vSUp8LwnJsKbVjrTNvuWh9+LflZavyR1xFjbrZPw==",
+  "dgSpecHash": "Tf62rMD1C8vcZp3ny7uTmjawZ09Z61pZdET3LqjCpgk1ob9SpDjfNvgBUGSZO//eiCLICRTaC8t2RZ6WOj+Thw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Sindona\\Documents\\oliver-projects\\Undisputed\\Undisputed\\Undisputed.csproj",
   "expectedPackageFiles": [
@@ -43,6 +43,7 @@
     "C:\\Users\\Sindona\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.10.0\\microsoft.identitymodel.protocols.openidconnect.6.10.0.nupkg.sha512",
     "C:\\Users\\Sindona\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.10.0\\microsoft.identitymodel.tokens.6.10.0.nupkg.sha512",
     "C:\\Users\\Sindona\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\Sindona\\.nuget\\packages\\microsoft.typescript.msbuild\\4.7.4\\microsoft.typescript.msbuild.4.7.4.nupkg.sha512",
     "C:\\Users\\Sindona\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Sindona\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Sindona\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
