@@ -15,7 +15,7 @@ namespace Undisputed.Controllers
             "Caps",
         };
 
-        [Authorize]
+
         public IActionResult Index()
         {
             return View();

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5xXOb5pN0e87iG5n4ITKFYA+3zFvoVs0YOpN+snqVKk=",
+  "Hash": "du2Rw6/hV2AJToQhTbPrVSyKD4uB1IMu2YTfO/VXZ5k=",
   "Source": "Undisputed",
   "BasePath": "_content/Undisputed",
   "Mode": "Default",
@@ -185,6 +185,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\Sindona\\Documents\\oliver-projects\\Undisputed\\Undisputed\\wwwroot\\dist\\undisputed.min.css",
+      "SourceId": "Undisputed",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Sindona\\Documents\\oliver-projects\\Undisputed\\Undisputed\\wwwroot\\",
+      "BasePath": "_content/Undisputed",
+      "RelativePath": "dist/undisputed.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\dist\\undisputed.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\Sindona\\Documents\\oliver-projects\\Undisputed\\Undisputed\\wwwroot\\dist\\undisputed.min.js",
+      "SourceId": "Undisputed",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Sindona\\Documents\\oliver-projects\\Undisputed\\Undisputed\\wwwroot\\",
+      "BasePath": "_content/Undisputed",
+      "RelativePath": "dist/undisputed.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\dist\\undisputed.min.js"
     },
     {
       "Identity": "C:\\Users\\Sindona\\Documents\\oliver-projects\\Undisputed\\Undisputed\\wwwroot\\favicon.ico",

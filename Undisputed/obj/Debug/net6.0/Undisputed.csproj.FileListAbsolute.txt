@@ -71,3 +71,5 @@ C:\Users\Sindona\Documents\oliver-projects\Undisputed\Undisputed\bin\Debug\net6.
 C:\Users\Sindona\Documents\oliver-projects\Undisputed\Undisputed\bin\Debug\net6.0\client\package.json
 C:\Users\Sindona\Documents\oliver-projects\Undisputed\Undisputed\bin\Debug\net6.0\client\tsconfig.app.json
 C:\Users\Sindona\Documents\oliver-projects\Undisputed\Undisputed\bin\Debug\net6.0\client\tsconfig.json
+C:\Users\Sindona\Documents\oliver-projects\Undisputed\Undisputed\bin\Debug\net6.0\package-lock.json
+C:\Users\Sindona\Documents\oliver-projects\Undisputed\Undisputed\bin\Debug\net6.0\package.json
