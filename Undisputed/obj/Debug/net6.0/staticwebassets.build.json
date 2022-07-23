@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "du2Rw6/hV2AJToQhTbPrVSyKD4uB1IMu2YTfO/VXZ5k=",
+  "Hash": "W5VnFlRjOJ3Yn9XggXCBhRc1tRng7Hv8eUIIggxIoWI=",
   "Source": "Undisputed",
   "BasePath": "_content/Undisputed",
   "Mode": "Default",
@@ -253,6 +253,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\undisputed-black.png"
+    },
+    {
+      "Identity": "C:\\Users\\Sindona\\Documents\\oliver-projects\\Undisputed\\Undisputed\\wwwroot\\img\\undisputed-black2.png",
+      "SourceId": "Undisputed",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Sindona\\Documents\\oliver-projects\\Undisputed\\Undisputed\\wwwroot\\",
+      "BasePath": "_content/Undisputed",
+      "RelativePath": "img/undisputed-black2.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\undisputed-black2.png"
     },
     {
       "Identity": "C:\\Users\\Sindona\\Documents\\oliver-projects\\Undisputed\\Undisputed\\wwwroot\\img\\undisputed-white.png",

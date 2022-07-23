@@ -31,6 +31,9 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
+                            <a class="nav-link text-dark-gray" asp-area="" asp-controller="topic" asp-action="Index">Topics</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-dark-gray" asp-area="" asp-controller="team" asp-action="Index">Teams</a>
                         </li>
                         @if (User.Identity.IsAuthenticated)
@@ -39,18 +42,14 @@
                                 <a class="nav-link text-dark-gray" asp-area="" asp-controller="user" asp-action="Index">Users</a>
                             </li>
                         }
-                        <li class="nav-item">
-                            <a class="nav-link text-dark-gray" asp-area="" asp-controller="topic" asp-action="Index">Topics</a>
-                        </li>
+                       
                         <li class="nav-item">
                             <a class="nav-link text-dark-gray" asp-area="" asp-controller="neat" asp-action="Index">Neat's</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark-gray" asp-area="" asp-controller="shop" asp-action="Index">Shop</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark-gray" asp-area="" asp-controller="contact" asp-action="Index">Contact</a>
-                        </li>
+
                         @if(User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">
@@ -80,9 +79,72 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - Undisputed - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer class="border-top footer text-muted footer">
+
+        <div class="container py-4">
+            <div class="footer__group">
+                <div class="group__left">
+                    <a class="navbar-brand fix-position logo" asp-area="" asp-controller="Home" asp-action="Index"><img width="160" height="36" src="/img/undisputed-black2.png" /></a>
+                    <div class="container-txt">
+                        <span>
+                            Undisputed is the station where you have free speech, meet high-performance individuals and take a look at all types of subjects. Welcome!
+                        </span>
+                    </div>
+
+                </div>
+                <div>
+                    <div class="group-links">
+                        <h3 class="h3">Join</h3>
+                        <ul class="footer__nav">
+                            <li class="nav-item">
+                                <a class="footer__link text-white-opt" asp-area="" asp-controller="topic" asp-action="Index">Topics</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="footer__link text-white-opt" asp-area="" asp-controller="team" asp-action="Index">Teams</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="footer__link text-white-opt" asp-area="" asp-controller="neat" asp-action="Index">Neat's</a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+                <div>
+                    <div class="group-links">
+                        <h3 class="h3">Support Us</h3>
+                        <ul class="footer__nav">
+                            <li class="nav-item">
+                                <a class="footer__link text-white-opt" asp-area="" asp-controller="shop" asp-action="Index">Shop</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div>
+                    <div class="group-links">
+                        <h3 class="h3">Legal</h3>
+                        <ul class="footer__nav">
+                            <li class="nav-item">
+                                <a class="footer__link text-white-opt" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="footer__link text-white-opt" asp-area="" asp-controller="contact" asp-action="Index">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                </div>
+
+               
+            </div>
+           
+        </div>
+        <div class="bg-black py-4">
+            <div class="container">
+                <small class="text-white-opt"> &copy; 2022 - Undisputed </small>
+            </div>
+           
         </div>
     </footer>
     <environment include="Development">
